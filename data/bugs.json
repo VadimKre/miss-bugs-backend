@@ -1,0 +1,44 @@
+[
+    {
+        "_id": "q7m3c9",
+        "title": "Cannot save a Car",
+        "severity": 3,
+        "createdAt": 1730361000000
+    },
+    {
+        "_id": "k2p8v1",
+        "title": "App crashes on login",
+        "severity": 4,
+        "createdAt": 1730357000000
+    },
+    {
+        "_id": "h5x1t2",
+        "title": "Severity filter not applied",
+        "severity": 5,
+        "createdAt": 1730349000000
+    },
+    {
+        "_id": "r9d3w8",
+        "title": "Cannot delete bug",
+        "severity": 3,
+        "createdAt": 1730345000000
+    },
+    {
+        "_id": "m0s7f4",
+        "title": "Edit modal not closing",
+        "severity": 1,
+        "createdAt": 1730341000000
+    },
+    {
+        "_id": "u5pmmA",
+        "title": "Updated Title",
+        "severity": "2",
+        "createdAt": "1730341000000"
+    },
+    {
+        "title": "cant click button",
+        "severity": "5",
+        "_id": "gqYQnf",
+        "createdAt": "1762087395159"
+    }
+]
