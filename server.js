@@ -1,6 +1,7 @@
 import express from 'express'
 import cors from 'cors'
 import cookieParser from 'cookie-parser'
+import PDFDocument from 'pdfkit'
 
 import { bugService } from './services/bug.service.js'
 
@@ -54,6 +55,28 @@ app.get('/api/bug/:bugId', async (req, res) => {
     } catch(e) {
         console.log('error in server: ', e)
         res.status(400).send(`Bug not found`)
+    }
+})
+app.get('/api/bug/:bugId/pdf', async (req, res) => {
+    try{
+        const { bugId } = req.params
+
+        res.setHeader('Content-Type', 'application/pdf')
+        res.setHeader('Content-Disposition', `attachment; filename="bug-${bugId}.pdf`)
+        const bug = await bugService.getById(bugId)
+        
+        const doc = new PDFDocument()
+        doc.pipe(res)
+        doc.text(
+            `id: ${bug._id}\n
+            Title: ${bug.title}\n
+            Description: ${bug.description}\n
+            Severity: ${bug.severity}
+        `)
+        doc.end()
+    } catch(e) {
+        console.log('error in server: ', e)
+        res.status(400).send(`Cant create pdf`)
     }
 })
 
