@@ -50,8 +50,19 @@ app.get('/api/bug/save', async (req, res) => {
 app.get('/api/bug/:bugId', async (req, res) => {
     try{
         const { bugId } = req.params
-        const bug = await bugService.getById(bugId)
-        res.send(bug)
+
+        let visitedBugs = req.cookies.visitedBugs || []
+        visitedBugs.findIndex( (id) => id === bugId) === -1 && (visitedBugs.push(bugId))
+        console.log('visitedBugs: ', visitedBugs)
+
+        if (visitedBugs.length > 3 ){ 
+            res.status(401).send('Please wait')
+        } else {
+            res.cookie('visitedBugs', visitedBugs, { maxAge: 7000 })  
+            const bug = await bugService.getById(bugId)
+            res.send(bug)
+        }
+
     } catch(e) {
         console.log('error in server: ', e)
         res.status(400).send(`Bug not found`)
@@ -64,7 +75,7 @@ app.get('/api/bug/:bugId/pdf', async (req, res) => {
         res.setHeader('Content-Type', 'application/pdf')
         res.setHeader('Content-Disposition', `attachment; filename="bug-${bugId}.pdf`)
         const bug = await bugService.getById(bugId)
-        
+
         const doc = new PDFDocument()
         doc.pipe(res)
         doc.text(
