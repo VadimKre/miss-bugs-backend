@@ -1,38 +1,51 @@
 [
     {
         "_id": "q7m3c9",
-        "title": "Cannot save a Car",
+        "title": "Cannot save a Bug",
         "severity": 3,
-        "createdAt": 1730361000000
+        "createdAt": 1730361000000,
+        "description": "Save action fails on bug form submit."
     },
     {
         "_id": "k2p8v1",
         "title": "App crashes on login",
         "severity": 4,
-        "createdAt": 1730357000000
-    },
-    {
-        "_id": "z4n6b0",
-        "title": "Bug list not loading",
-        "severity": 2,
-        "createdAt": 1730353000000
+        "createdAt": 1730357000000,
+        "description": "App exits after entering valid credentials."
     },
     {
         "_id": "h5x1t2",
         "title": "Severity filter not applied",
         "severity": 5,
-        "createdAt": 1730349000000
+        "createdAt": 1730349000000,
+        "description": "Selected severity filter shows unfiltered results."
     },
     {
         "_id": "r9d3w8",
         "title": "Cannot delete bug",
         "severity": 3,
-        "createdAt": 1730345000000
+        "createdAt": 1730345000000,
+        "description": "Delete button does nothing; item remains."
     },
     {
         "_id": "m0s7f4",
         "title": "Edit modal not closing",
         "severity": 1,
-        "createdAt": 1730341000000
+        "createdAt": 1730341000000,
+        "description": "Modal stays open after saving changes."
+    },
+    {
+        "_id": "u5pmmA",
+        "title": "Updated Title",
+        "severity": "2",
+        "createdAt": "1730341000000",
+        "description": "Updated via API to verify saving."
+    },
+    {
+        "title": "cant click button",
+        "severity": "5",
+        "_id": "gqYQnf",
+        "createdAt": "1762087395159",
+        "description": "Primary button appears disabled or unresponsive."
     }
 ]
