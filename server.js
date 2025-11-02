@@ -22,8 +22,10 @@ app.use(cookieParser())
 app.get('/', (req, res) => res.send('Hello there'))
 
 app.get('/api/bugs', async (req, res) => {
+    const filterBy = { ...req.query }
+    console.log('filterBy in server: ', filterBy)
     try{
-        const bugs = await bugService.query()
+        const bugs = await bugService.query(filterBy)
         res.send(bugs)
     } catch(e) {
         console.log('error in server: ', e)

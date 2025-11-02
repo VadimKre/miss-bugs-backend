@@ -11,8 +11,14 @@ export const bugService = {
     save,
 }
 
-function query() {
+function query(filterBy = {}) {
+
+    let bugs = readJsonFile(path)
+
     try {
+        filterBy.title && (bugs = bugs.filter( (bug) => bug.title.toLowerCase().includes(filterBy.title.toLowerCase())))
+        filterBy.severityMin && (bugs = bugs.filter( (bug) => bug.severity >= filterBy.severityMin))
+        filterBy.severityMax && (bugs = bugs.filter( (bug) => bug.severity <= filterBy.severityMax))
         return bugs
     } catch (e) { 
         console.log('error in bug service: ', e)
@@ -46,7 +52,6 @@ async function remove(bugId) {
 
 async function save(bugToSave){
     try {
-        console.log('bug to save: ', bugToSave)
         const indexToReplace = bugs.findIndex( (bug) => bug._id === bugToSave._id)
         if (indexToReplace !== -1) {
             bugs[indexToReplace] = { ...bugs[indexToReplace], ...bugToSave }
@@ -55,7 +60,6 @@ async function save(bugToSave){
             bugToSave.createdAt = Date.now()
             bugs.push(bugToSave)
         }
-        // console.log('bugs: ', bugs)
         await writeJsonFile(path, bugs)
         return bugToSave
     } catch(e) {
