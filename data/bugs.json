@@ -4,55 +4,81 @@
         "title": "Cannot save a Bug",
         "severity": 3,
         "createdAt": 1730361000000,
-        "description": "Save action fails on bug form submit."
+        "description": "Save action fails on bug form submit.",
+        "labels": [
+            "critical",
+            "need-CR"
+        ]
     },
     {
         "_id": "k2p8v1",
         "title": "App crashes on login",
-        "severity": 4,
+        "severity": 2,
         "createdAt": 1730357000000,
-        "description": "App exits after entering valid credentials."
+        "description": "App exits after entering valid credentials.",
+        "labels": [
+            "critical"
+        ]
     },
     {
         "_id": "h5x1t2",
         "title": "Severity filter not applied",
-        "severity": 5,
+        "severity": 4,
         "createdAt": 1730349000000,
-        "description": "Selected severity filter shows unfiltered results."
+        "description": "Selected severity filter shows unfiltered results.",
+        "labels": [
+            "need-CR",
+            "dev-branch"
+        ]
     },
     {
         "_id": "r9d3w8",
         "title": "Cannot delete bug",
         "severity": 3,
         "createdAt": 1730345000000,
-        "description": "Delete button does nothing; item remains."
+        "description": "Delete button does nothing; item remains.",
+        "labels": [
+            "dev-branch"
+        ]
     },
     {
         "_id": "m0s7f4",
         "title": "Edit modal not closing",
         "severity": 1,
         "createdAt": 1730341000000,
-        "description": "Modal stays open after saving changes."
+        "description": "Modal stays open after saving changes.",
+        "labels": [
+            "need-CR"
+        ]
     },
     {
         "_id": "u5pmmA",
         "title": "Updated Title",
         "severity": "2",
         "createdAt": "1730341000000",
-        "description": "Updated via API to verify saving."
+        "description": "Updated via API to verify saving.",
+        "labels": [
+            "dev-branch",
+            "need-CR",
+            "critical"
+        ]
     },
     {
         "title": "cant click button",
         "severity": "5",
         "_id": "gqYQnf",
         "createdAt": "1762087395159",
-        "description": "Primary button appears disabled or unresponsive."
+        "description": "Primary button appears disabled or unresponsive.",
+        "labels": [
+            "dev-branch",
+            "need-CR"
+        ]
     },
     {
-        "title": "Modal bug",
-        "severity": "3",
-        "description": "Cant open the modal",
-        "_id": "ylJMJY",
-        "createdAt": 1762092773743
+        "title": "Cannot open modal",
+        "severity": 3,
+        "description": "the modal is not opening",
+        "_id": "5dKJC7",
+        "createdAt": 1762357587676
     }
 ]

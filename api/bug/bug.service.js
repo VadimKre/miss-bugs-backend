@@ -1,4 +1,4 @@
-import { readJsonFile, writeJsonFile, makeId } from "./util.service.js"
+import { readJsonFile, writeJsonFile, makeId } from "../../services/util.service.js"
 
 const path = './data/bugs.json'
 
@@ -11,7 +11,7 @@ export const bugService = {
     save,
 }
 
-function query(filterBy = {}) {
+function query(filterBy = {}, sortBy='') {
 
     let bugs = readJsonFile(path)
 
