@@ -4,6 +4,8 @@ const path = './data/bugs.json'
 
 const bugs = readJsonFile(path)
 
+const resultsPerPage = 3
+
 export const bugService = {
     query,
     getById,
@@ -11,7 +13,7 @@ export const bugService = {
     save,
 }
 
-function query(filterBy = {}, sortBy='') {
+function query(filterBy = {}, sortBy='', sortDir='', pageIdx=1) {
 
     let bugs = readJsonFile(path)
 
@@ -19,8 +21,17 @@ function query(filterBy = {}, sortBy='') {
         filterBy.title && (bugs = bugs.filter( (bug) => bug.title.toLowerCase().includes(filterBy.title.toLowerCase())))
         filterBy.severityMin && (bugs = bugs.filter( (bug) => bug.severity >= filterBy.severityMin))
         filterBy.severityMax && (bugs = bugs.filter( (bug) => bug.severity <= filterBy.severityMax))
+
+        sortBy === 'title' && (bugs = bugs.sort( (a,b) => a.title.localeCompare(b.title) ))
+        sortBy === 'severity' && (bugs = bugs.sort( (a,b) => a.severity - b.severity ))
+        sortBy === 'createdAt' && (bugs = bugs.sort( (a,b) => a.createdAt - b.createdAt ))
+
+        bugs = bugs.splice((pageIdx - 1) * resultsPerPage, resultsPerPage)
+
+        if (sortBy && sortDir === 'desc') return bugs.reverse()
+            
         return bugs
-    } catch (e) { 
+    } catch(e) { 
         console.log('error in bug service: ', e)
         throw new Error(e)
     }
