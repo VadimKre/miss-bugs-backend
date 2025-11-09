@@ -3,11 +3,11 @@ import { getBugs, saveBug, getBugById, getPDF, removeBug } from './bug.controlle
 
 const router = express.Router()
 
-router.get('/', getBugs)
-router.get('/:params', getBugs)
 router.post('/', saveBug)
 router.put('/', saveBug)
 router.get('/:bugId', getBugById)
+router.get('/:params', getBugs)
+router.get('/', getBugs)
 router.get('/:bugId/pdf', getPDF)
 router.delete('/:bugId', removeBug)
 

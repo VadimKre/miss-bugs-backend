@@ -1,0 +1,44 @@
+[
+    {
+        "_id": "u101",
+        "fullname": "Muki Ja",
+        "username": "muki",
+        "password": "muki1234",
+        "score": 100
+    },
+    {
+        "_id": "u102",
+        "fullname": "Dana Li",
+        "username": "dana",
+        "password": "dana1234",
+        "score": 150
+    },
+    {
+        "_id": "u103",
+        "fullname": "Tom Roe",
+        "username": "tom",
+        "password": "tom1234",
+        "score": 80
+    },
+    {
+        "_id": "u104",
+        "fullname": "Sara Kim",
+        "username": "sara",
+        "password": "sara1234",
+        "score": 120
+    },
+    {
+        "_id": "u105",
+        "fullname": "Alex Fox",
+        "username": "alex",
+        "password": "alex1234",
+        "score": 200
+    },
+    {
+        "_id": "u106",
+        "fullname": "Nia Zee",
+        "username": "nia",
+        "password": "nia1234",
+        "score": 95
+    }
+]
