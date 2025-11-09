@@ -18,9 +18,10 @@ function query(filterBy = {}, sortBy='', sortDir='', pageIdx=1) {
     let bugs = readJsonFile(path)
 
     try {
-        filterBy.title && (bugs = bugs.filter( (bug) => bug.title.toLowerCase().includes(filterBy.title.toLowerCase())))
-        filterBy.severityMin && (bugs = bugs.filter( (bug) => bug.severity >= filterBy.severityMin))
-        filterBy.severityMax && (bugs = bugs.filter( (bug) => bug.severity <= filterBy.severityMax))
+        filterBy.title && (bugs = bugs.filter( (bug) => bug.title.toLowerCase().includes(filterBy.title.toLowerCase()) ))
+        filterBy.severityMin && (bugs = bugs.filter( (bug) => bug.severity >= filterBy.severityMin ))
+        filterBy.severityMax && (bugs = bugs.filter( (bug) => bug.severity <= filterBy.severityMax ))
+        filterBy.labels && (bugs = bugs.filter( (bug) =>  bug.labels.find( (label) => filterBy.labels.find( (l) => l === label ) )))
 
         sortBy === 'title' && (bugs = bugs.sort( (a,b) => a.title.localeCompare(b.title) ))
         sortBy === 'severity' && (bugs = bugs.sort( (a,b) => a.severity - b.severity ))
@@ -29,7 +30,7 @@ function query(filterBy = {}, sortBy='', sortDir='', pageIdx=1) {
         bugs = bugs.splice((pageIdx - 1) * resultsPerPage, resultsPerPage)
 
         if (sortBy && sortDir === 'desc') return bugs.reverse()
-            
+
         return bugs
     } catch(e) { 
         console.log('error in bug service: ', e)

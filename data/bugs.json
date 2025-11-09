@@ -48,7 +48,8 @@
         "createdAt": 1730341000000,
         "description": "Modal stays open after saving changes.",
         "labels": [
-            "need-CR"
+            "need-CR",
+            "test1"
         ]
     },
     {
@@ -60,7 +61,8 @@
         "labels": [
             "dev-branch",
             "need-CR",
-            "critical"
+            "critical",
+            "test12"
         ]
     },
     {
@@ -79,6 +81,11 @@
         "severity": 3,
         "description": "the modal is not opening",
         "_id": "5dKJC7",
+        "labels": [
+            "dev-branch",
+            "need-CR",
+            "test12"
+        ],
         "createdAt": 1762357587676
     }
 ]
