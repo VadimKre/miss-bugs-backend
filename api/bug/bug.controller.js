@@ -41,7 +41,6 @@ export async function saveBug(req, res){
 
 export async function getBugs(req, res){
     const { filterBy, sortBy, sortDir, pageIdx } = { ...req.query }
-    console.log('filterBy in controller: ', filterBy)
     try{
         const bugs = await bugService.query(filterBy, sortBy, sortDir, pageIdx)
         res.send(bugs)

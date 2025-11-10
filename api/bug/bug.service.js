@@ -13,9 +13,9 @@ export const bugService = {
     save,
 }
 
-function query(filterBy = {}, sortBy='', sortDir='', pageIdx=1) {
+async function query(filterBy = {}, sortBy='', sortDir='', pageIdx=1) {
 
-    let bugs = readJsonFile(path)
+    let bugs = await readJsonFile(path)
 
     try {
         filterBy.title && (bugs = bugs.filter( (bug) => bug.title.toLowerCase().includes(filterBy.title.toLowerCase()) ))
@@ -32,9 +32,9 @@ function query(filterBy = {}, sortBy='', sortDir='', pageIdx=1) {
 
         const totalPages = Math.ceil(bugs.length / resultsPerPage)
 
-        bugs = bugs.splice((pageIdx - 1) * resultsPerPage, resultsPerPage)
+        if (sortBy && sortDir === 'desc') bugs = bugs.reverse()
 
-        if (sortBy && sortDir === 'asc') return bugs.reverse()
+        bugs = bugs.splice((pageIdx - 1) * resultsPerPage, resultsPerPage)
 
         return {bugs: bugs, totalPages: totalPages}
     } catch(e) { 
