@@ -41,14 +41,14 @@ export async function saveBug(req, res){
 
 export async function getBugs(req, res){
     const { filterBy, sortBy, sortDir, pageIdx } = { ...req.query }
-        console.log('filterBy in server: ', filterBy)
-        try{
-            const bugs = await bugService.query(filterBy, sortBy, sortDir, pageIdx)
-            res.send(bugs)
-        } catch(e) {
-            console.log('error in server: ', e)
-            res.status(400).send(`Bugs not found`)
-        }
+    console.log('filterBy in controller: ', filterBy)
+    try{
+        const bugs = await bugService.query(filterBy, sortBy, sortDir, pageIdx)
+        res.send(bugs)
+    } catch(e) {
+        console.log('error in server: ', e)
+        res.status(400).send(`Bugs not found`)
+    }
 }
 
 export async function getPDF(req, res){

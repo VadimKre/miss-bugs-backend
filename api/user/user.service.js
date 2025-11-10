@@ -20,7 +20,7 @@ function query(filterBy = {}, sortBy='', sortDir='', pageIdx=1) {
     try {
         return users
     } catch(e) { 
-        console.log('error in bug service: ', e)
+        console.log('error in user service: ', e)
         throw new Error(e)
     }
 }
@@ -29,7 +29,7 @@ function getById(userId) {
     try {
         return users.find( (user) => user._id === userId )
     } catch(e) {
-        console.log('error in bug service: ', e)
+        console.log('error in user service: ', e)
         throw new Error(e)
     }
 }
@@ -44,7 +44,7 @@ async function remove(userId) {
         await writeJsonFile(path, users)
         return users
     } catch(e) {
-        console.log('error in bug service: ', e)
+        console.log('error in user service: ', e)
         throw new Error(e)
     } 
 }
@@ -56,12 +56,12 @@ async function save(userToSave){
             users[indexToReplace] = { ...users[indexToReplace], ...userToSave }
         } else {
             userToSave._id = makeId()
-            bugs.push(bugToSave)
+            users.push(userToSave)
         }
         await writeJsonFile(path, users)
         return userToSave
     } catch(e) {
-        console.log('error in bug service: ', e)
+        console.log('error in user service: ', e)
         throw new Error(e)
     } 
 }

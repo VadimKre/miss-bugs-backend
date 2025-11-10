@@ -1,16 +1,5 @@
 [
     {
-        "_id": "q7m3c9",
-        "title": "Cannot save a Bug",
-        "severity": 3,
-        "createdAt": 1730361000000,
-        "description": "Save action fails on bug form submit.",
-        "labels": [
-            "critical",
-            "need-CR"
-        ]
-    },
-    {
         "_id": "k2p8v1",
         "title": "App crashes on login",
         "severity": 2,
@@ -34,7 +23,7 @@
     {
         "_id": "r9d3w8",
         "title": "Cannot delete bug",
-        "severity": 3,
+        "severity": 1,
         "createdAt": 1730345000000,
         "description": "Delete button does nothing; item remains.",
         "labels": [
@@ -87,5 +76,37 @@
             "test12"
         ],
         "createdAt": 1762357587676
+    },
+    {
+        "title": "Logout broken",
+        "severity": 5,
+        "description": "app crashes on logout",
+        "_id": "heZg4N",
+        "labels": [
+            "dev-branch",
+            "need-CR"
+        ],
+        "createdAt": 1762714046671
+    },
+    {
+        "title": "Testing fails",
+        "severity": 2,
+        "description": "testing a bug fails",
+        "_id": "ZtlLtN",
+        "labels": [
+            "need-CR"
+        ],
+        "createdAt": 1762714131717
+    },
+    {
+        "title": "testing bug",
+        "severity": 1,
+        "description": "testing testing bugs",
+        "labels": [
+            "critical",
+            "need-CR"
+        ],
+        "_id": "rnccOs",
+        "createdAt": 1762717041310
     }
 ]

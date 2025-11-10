@@ -21,17 +21,22 @@ function query(filterBy = {}, sortBy='', sortDir='', pageIdx=1) {
         filterBy.title && (bugs = bugs.filter( (bug) => bug.title.toLowerCase().includes(filterBy.title.toLowerCase()) ))
         filterBy.severityMin && (bugs = bugs.filter( (bug) => bug.severity >= filterBy.severityMin ))
         filterBy.severityMax && (bugs = bugs.filter( (bug) => bug.severity <= filterBy.severityMax ))
-        filterBy.labels && (bugs = bugs.filter( (bug) =>  bug.labels.find( (label) => filterBy.labels.find( (l) => l === label ) )))
+        filterBy.labels && (bugs = bugs.filter( 
+            (bug) =>  bug.labels.find( 
+                (label) => filterBy.labels.find( 
+                    (l) => label.toLowerCase().includes(l.toLowerCase()) ) )))
 
         sortBy === 'title' && (bugs = bugs.sort( (a,b) => a.title.localeCompare(b.title) ))
         sortBy === 'severity' && (bugs = bugs.sort( (a,b) => a.severity - b.severity ))
         sortBy === 'createdAt' && (bugs = bugs.sort( (a,b) => a.createdAt - b.createdAt ))
 
+        const totalPages = Math.ceil(bugs.length / resultsPerPage)
+
         bugs = bugs.splice((pageIdx - 1) * resultsPerPage, resultsPerPage)
 
-        if (sortBy && sortDir === 'desc') return bugs.reverse()
+        if (sortBy && sortDir === 'asc') return bugs.reverse()
 
-        return bugs
+        return {bugs: bugs, totalPages: totalPages}
     } catch(e) { 
         console.log('error in bug service: ', e)
         throw new Error(e)
