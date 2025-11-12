@@ -1,24 +1,17 @@
 [
     {
-        "_id": "q7m3c9",
-        "title": "Cannot save a Bug",
-        "severity": 3,
-        "createdAt": 1730361000000,
-        "description": "Save action fails on bug form submit.",
-        "labels": [
-            "critical",
-            "need-CR"
-        ]
-    },
-    {
         "_id": "k2p8v1",
         "title": "App crashes on login",
-        "severity": 4,
+        "severity": 2,
         "createdAt": 1730357000000,
         "description": "App exits after entering valid credentials.",
         "labels": [
             "critical"
-        ]
+        ],
+        "creator": {
+            "_id": "u101",
+            "fullname": "Muki Ja"
+        }
     },
     {
         "_id": "h5x1t2",
@@ -29,17 +22,25 @@
         "labels": [
             "need-CR",
             "dev-branch"
-        ]
+        ],
+        "creator": {
+            "_id": "u102",
+            "fullname": "Dana Li"
+        }
     },
     {
         "_id": "r9d3w8",
         "title": "Cannot delete bug",
-        "severity": 3,
+        "severity": 1,
         "createdAt": 1730345000000,
         "description": "Delete button does nothing; item remains.",
         "labels": [
             "dev-branch"
-        ]
+        ],
+        "creator": {
+            "_id": "u103",
+            "fullname": "Tom Roe"
+        }
     },
     {
         "_id": "m0s7f4",
@@ -48,20 +49,30 @@
         "createdAt": 1730341000000,
         "description": "Modal stays open after saving changes.",
         "labels": [
-            "need-CR"
-        ]
+            "need-CR",
+            "test1"
+        ],
+        "creator": {
+            "_id": "u104",
+            "fullname": "Sara Kim"
+        }
     },
     {
         "_id": "u5pmmA",
         "title": "Updated Title",
-        "severity": "2",
+        "severity": "5",
         "createdAt": "1730341000000",
         "description": "Updated via API to verify saving.",
         "labels": [
             "dev-branch",
             "need-CR",
-            "critical"
-        ]
+            "critical",
+            "test12"
+        ],
+        "creator": {
+            "_id": "u105",
+            "fullname": "Alex Fox"
+        }
     },
     {
         "title": "cant click button",
@@ -72,17 +83,86 @@
         "labels": [
             "dev-branch",
             "need-CR"
-        ]
+        ],
+        "creator": {
+            "_id": "u106",
+            "fullname": "Nia Zee"
+        }
     },
     {
-        "title": "Modal bug",
-        "severity": "3",
-        "description": "Cant open the modal",
-        "_id": "ylJMJY",
-        "createdAt": 1762092773743,
+        "title": "Cannot open modal",
+        "severity": 3,
+        "description": "the modal is not opening",
+        "_id": "5dKJC7",
+        "labels": [
+            "dev-branch",
+            "need-CR",
+            "test12"
+        ],
+        "createdAt": 1762357587676,
+        "creator": {
+            "_id": "u101",
+            "fullname": "Muki Ja"
+        }
+    },
+    {
+        "title": "Logout broken",
+        "severity": 5,
+        "description": "app crashes on logout",
+        "_id": "heZg4N",
+        "labels": [
+            "dev-branch",
+            "need-CR"
+        ],
+        "createdAt": 1762714046671,
+        "creator": {
+            "_id": "u102",
+            "fullname": "Dana Li"
+        }
+    },
+    {
+        "title": "Testing fails",
+        "severity": 2,
+        "description": "testing a bug fails",
+        "_id": "ZtlLtN",
+        "labels": [
+            "need-CR"
+        ],
+        "createdAt": 1762714131717,
+        "creator": {
+            "_id": "u103",
+            "fullname": "Tom Roe"
+        }
+    },
+    {
+        "title": "testing bug",
+        "severity": 1,
+        "description": "testing testing bugs",
         "labels": [
             "critical",
-            "dev-branch"
-        ]
+            "need-CR"
+        ],
+        "_id": "rnccOs",
+        "createdAt": 1762717041310,
+        "creator": {
+            "_id": "u104",
+            "fullname": "Sara Kim"
+        }
+    },
+    {
+        "title": "Search results empty",
+        "severity": "2",
+        "description": "Typing any keyword returns an empty list even though data exists.",
+        "labels": [
+            "dev-branch",
+            "need-CR"
+        ],
+        "_id": "CaX7Ak",
+        "createdAt": 1762979457842,
+        "creator": {
+            "_id": "4tnm9Q",
+            "username": "vovchik",
+            "fullname": "vov chik"
+        }
     }
 ]

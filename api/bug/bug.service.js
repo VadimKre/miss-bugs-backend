@@ -67,7 +67,7 @@ async function remove(bugId) {
     } 
 }
 
-async function save(bugToSave){
+async function save(bugToSave, user){
     try {
         const indexToReplace = bugs.findIndex( (bug) => bug._id === bugToSave._id)
         if (indexToReplace !== -1) {
@@ -75,6 +75,7 @@ async function save(bugToSave){
         } else {
             bugToSave._id = makeId()
             bugToSave.createdAt = Date.now()
+            bugToSave.creator = user
             bugs.push(bugToSave)
         }
         await writeJsonFile(path, bugs)

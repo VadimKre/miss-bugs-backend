@@ -11,6 +11,7 @@
         "fullname": "Dana Li",
         "username": "dana",
         "password": "dana1234",
+        "isAdmin": true,
         "score": 150
     },
     {
@@ -40,5 +41,11 @@
         "username": "nia",
         "password": "nia1234",
         "score": 95
+    },
+    {
+        "username": "vovchik",
+        "password": "$2b$10$1MhfP7VnqNkWq1ZiHY.1s.CaDNlpLmdRQvlBpvGPVeLfU9eALucs6",
+        "fullname": "vov chik",
+        "_id": "4tnm9Q"
     }
 ]

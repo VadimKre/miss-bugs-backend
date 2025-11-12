@@ -8,6 +8,7 @@ const resultsPerPage = users.length
 
 export const userService = {
     query,
+    getByUsername,
     getById,
     remove,
     save,
@@ -20,6 +21,15 @@ function query(filterBy = {}, sortBy='', sortDir='', pageIdx=1) {
     try {
         return users
     } catch(e) { 
+        console.log('error in user service: ', e)
+        throw new Error(e)
+    }
+}
+
+function getByUsername(username){
+    try {
+        return users.find( (user) => user.username === username )
+    } catch(e) {
         console.log('error in user service: ', e)
         throw new Error(e)
     }
@@ -50,6 +60,7 @@ async function remove(userId) {
 }
 
 async function save(userToSave){
+    console.log('userToSave: ', userToSave)
     try {
         const indexToReplace = users.findIndex( (user) => user._id === userToSave._id)
         if (indexToReplace !== -1) {

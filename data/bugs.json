@@ -7,7 +7,11 @@
         "description": "App exits after entering valid credentials.",
         "labels": [
             "critical"
-        ]
+        ],
+        "creator": {
+            "_id": "u101",
+            "fullname": "Muki Ja"
+        }
     },
     {
         "_id": "h5x1t2",
@@ -18,7 +22,11 @@
         "labels": [
             "need-CR",
             "dev-branch"
-        ]
+        ],
+        "creator": {
+            "_id": "u102",
+            "fullname": "Dana Li"
+        }
     },
     {
         "_id": "r9d3w8",
@@ -28,7 +36,11 @@
         "description": "Delete button does nothing; item remains.",
         "labels": [
             "dev-branch"
-        ]
+        ],
+        "creator": {
+            "_id": "u103",
+            "fullname": "Tom Roe"
+        }
     },
     {
         "_id": "m0s7f4",
@@ -39,12 +51,16 @@
         "labels": [
             "need-CR",
             "test1"
-        ]
+        ],
+        "creator": {
+            "_id": "u104",
+            "fullname": "Sara Kim"
+        }
     },
     {
         "_id": "u5pmmA",
         "title": "Updated Title",
-        "severity": "2",
+        "severity": "5",
         "createdAt": "1730341000000",
         "description": "Updated via API to verify saving.",
         "labels": [
@@ -52,7 +68,11 @@
             "need-CR",
             "critical",
             "test12"
-        ]
+        ],
+        "creator": {
+            "_id": "u105",
+            "fullname": "Alex Fox"
+        }
     },
     {
         "title": "cant click button",
@@ -63,7 +83,11 @@
         "labels": [
             "dev-branch",
             "need-CR"
-        ]
+        ],
+        "creator": {
+            "_id": "u106",
+            "fullname": "Nia Zee"
+        }
     },
     {
         "title": "Cannot open modal",
@@ -75,7 +99,11 @@
             "need-CR",
             "test12"
         ],
-        "createdAt": 1762357587676
+        "createdAt": 1762357587676,
+        "creator": {
+            "_id": "u101",
+            "fullname": "Muki Ja"
+        }
     },
     {
         "title": "Logout broken",
@@ -86,7 +114,11 @@
             "dev-branch",
             "need-CR"
         ],
-        "createdAt": 1762714046671
+        "createdAt": 1762714046671,
+        "creator": {
+            "_id": "u102",
+            "fullname": "Dana Li"
+        }
     },
     {
         "title": "Testing fails",
@@ -96,7 +128,11 @@
         "labels": [
             "need-CR"
         ],
-        "createdAt": 1762714131717
+        "createdAt": 1762714131717,
+        "creator": {
+            "_id": "u103",
+            "fullname": "Tom Roe"
+        }
     },
     {
         "title": "testing bug",
@@ -107,6 +143,26 @@
             "need-CR"
         ],
         "_id": "rnccOs",
-        "createdAt": 1762717041310
+        "createdAt": 1762717041310,
+        "creator": {
+            "_id": "u104",
+            "fullname": "Sara Kim"
+        }
+    },
+    {
+        "title": "Search results empty",
+        "severity": "2",
+        "description": "Typing any keyword returns an empty list even though data exists.",
+        "labels": [
+            "dev-branch",
+            "need-CR"
+        ],
+        "_id": "CaX7Ak",
+        "createdAt": 1762979457842,
+        "creator": {
+            "_id": "4tnm9Q",
+            "username": "vovchik",
+            "fullname": "vov chik"
+        }
     }
 ]

@@ -6,6 +6,7 @@ import PDFDocument from 'pdfkit'
 import { bugService } from './api/bug/bug.service.js'
 import { bugRouter } from './api/bug/bug.routes.js'
 import { userRouter } from './api/user/user.routes.js'
+import { authRouter } from './api/auth/auth.routes.js'
 
 
 // import { loggerService } from './services/logger.service.js'˚
@@ -30,6 +31,7 @@ app.set('query parser', 'extended')
 
 app.use('/api/bug', bugRouter)
 app.use('/api/user', userRouter)
+app.use('/api/auth', authRouter)
 
 
 app.listen(3030, () => console.log('Server ready at port 3030'))
