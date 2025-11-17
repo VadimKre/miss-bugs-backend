@@ -19,7 +19,7 @@
         "fullname": "Tom Roe",
         "username": "tom",
         "password": "tom1234",
-        "score": 80
+        "score": 90
     },
     {
         "_id": "u104",
@@ -47,5 +47,23 @@
         "password": "$2b$10$1MhfP7VnqNkWq1ZiHY.1s.CaDNlpLmdRQvlBpvGPVeLfU9eALucs6",
         "fullname": "vov chik",
         "_id": "4tnm9Q"
+    },
+    {
+        "username": "test1",
+        "password": "$2b$10$yvhtKJiUQJmhExR.HQchduEPbgpQzu3jttLIciezX0wSHAisZpXQK",
+        "fullname": "testy 1",
+        "_id": "3TxqS8"
+    },
+    {
+        "username": "test2",
+        "password": "$2b$10$UuhLQD7EC5X7uTcSeL2LPuOsAmTc7EgmWQE4WDMmzlLBEDqaUSmDW",
+        "fullname": "testy",
+        "_id": "ziFFfE"
+    },
+    {
+        "username": "test4",
+        "password": "$2b$10$kionjIdNmJHrCaKCso.LDeetHYJP8yrCxzzh0aBwtyME/web02t8y",
+        "fullname": "testy",
+        "_id": "iGfXqJ"
     }
 ]

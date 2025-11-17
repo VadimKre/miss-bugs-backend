@@ -17,10 +17,13 @@ async function query(filterBy = {}, sortBy='', sortDir='', pageIdx=1) {
 
     let bugs = await readJsonFile(path)
 
+    console.log('filterBy: ', filterBy)
+
     try {
         filterBy.title && (bugs = bugs.filter( (bug) => bug.title.toLowerCase().includes(filterBy.title.toLowerCase()) ))
         filterBy.severityMin && (bugs = bugs.filter( (bug) => bug.severity >= filterBy.severityMin ))
         filterBy.severityMax && (bugs = bugs.filter( (bug) => bug.severity <= filterBy.severityMax ))
+        filterBy.creator && (bugs = bugs.filter( (bug) => bug.creator._id === filterBy.creator._id ))
         filterBy.labels && (bugs = bugs.filter( 
             (bug) =>  bug.labels.find( 
                 (label) => filterBy.labels.find( 

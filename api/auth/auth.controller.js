@@ -18,7 +18,8 @@ export async function signup(req, res){
     const user = req.body
     try{
         const userToSignUp = await authService.signup(user)
-        res.status(200).send(`User ${user.username} signed up`)
+        if (userToSignUp) res.status(200).send(`User ${user.username} signed up`) 
+        else throw 'coudnt sign up'
     } catch(e){
         console.log('Error in controller - signup', e)
         res.status(400).send({ err: 'Failed to SignUp' })
