@@ -21,6 +21,7 @@ function getLoginToken(user){
 function validateToken(token){
 
     try{
+        if(!token) return null
         const str = cryptr.decrypt(token)
         const user = JSON.parse(str)
         return user
@@ -28,7 +29,7 @@ function validateToken(token){
         console.log('Invalid user login token')
         throw e
     }
-    return null
+    
 }
 
 async function signup({ username, password, fullname }){
@@ -37,7 +38,7 @@ async function signup({ username, password, fullname }){
         if (!username || !password || !fullname) throw 'Missing signup information'
         if (userService.getByUsername(username)) throw 'Username already exists' 
         const hashedPassword = await bcrypt.hash(password, saltRounds)
-        return userService.save({ username, password: hashedPassword, fullname })
+        return userService.create({ username, password: hashedPassword, fullname })
     } catch(e){
         console.log('Error in signup user')
         throw e

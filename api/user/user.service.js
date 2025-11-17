@@ -11,7 +11,8 @@ export const userService = {
     getByUsername,
     getById,
     remove,
-    save,
+    create,
+    update,
 }
 
 function query(filterBy = {}, sortBy='', sortDir='', pageIdx=1) {
@@ -59,18 +60,27 @@ async function remove(userId) {
     } 
 }
 
-async function save(userToSave){
-    console.log('userToSave: ', userToSave)
+async function create(userToCreate){
     try {
-        const indexToReplace = users.findIndex( (user) => user._id === userToSave._id)
-        if (indexToReplace !== -1) {
-            users[indexToReplace] = { ...users[indexToReplace], ...userToSave }
-        } else {
-            userToSave._id = makeId()
-            users.push(userToSave)
-        }
+        const newUser = { ...userToCreate, _id: makeId() }
+        users.push(newUser)
         await writeJsonFile(path, users)
-        return userToSave
+        return newUser
+    } catch(e) {
+        console.log('error in user service: ', e)
+        throw new Error(e)
+    } 
+}
+
+async function update(userToUpdate){
+    try {
+        const indexToReplace = users.findIndex( (user) => user._id === userToUpdate._id)
+        if (indexToReplace === -1) {
+            throw new Error('Id not found in update')
+        }
+        users[indexToReplace] = { ...users[indexToReplace], ...userToUpdate }
+        await writeJsonFile(path, users)
+        return users[indexToReplace]
     } catch(e) {
         console.log('error in user service: ', e)
         throw new Error(e)
