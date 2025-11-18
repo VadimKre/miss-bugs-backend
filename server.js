@@ -2,6 +2,8 @@ import express from 'express'
 import cors from 'cors'
 import cookieParser from 'cookie-parser'
 import PDFDocument from 'pdfkit'
+import path from 'path'
+import { fileURLToPath } from 'url'
 
 import { bugService } from './api/bug/bug.service.js'
 import { bugRouter } from './api/bug/bug.routes.js'
@@ -13,6 +15,9 @@ import { authRouter } from './api/auth/auth.routes.js'
 
 
 const app = express()
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+const publicPath = path.resolve(__dirname, 'public')
 
 const corsOptions = {
     origin: [
@@ -28,10 +33,14 @@ app.use(cors(corsOptions))
 app.use(cookieParser())
 app.use(express.json())
 app.set('query parser', 'extended')
+app.use(express.static(publicPath))
 
 app.use('/api/bug', bugRouter)
 app.use('/api/user', userRouter)
 app.use('/api/auth', authRouter)
 
+app.get(/^\/(?!api).*/, (req, res) => {
+    res.sendFile(path.join(publicPath, 'index.html'))
+})
 
 app.listen(3030, () => console.log('Server ready at port 3030'))
