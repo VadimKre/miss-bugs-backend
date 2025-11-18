@@ -31,7 +31,7 @@
     {
         "_id": "r9d3w8",
         "title": "Cannot delete bug",
-        "severity": 1,
+        "severity": 3,
         "createdAt": 1730345000000,
         "description": "Delete button does nothing; item remains.",
         "labels": [

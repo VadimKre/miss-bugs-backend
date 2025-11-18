@@ -28,10 +28,10 @@ export async function getBugById(req, res) {
 
 export async function saveBug(req, res){
     try {
-        const loginToken = req.cookies.loginToken
-        const user = authService.validateToken(loginToken)
+        const user = req.user
+        const isAdmin = user?.isAdmin
         const bugToSave  = req.body
-        if (bugToSave && user.username === bugToSave.creator.username) {
+        if (bugToSave && ( user.username === bugToSave.creator.username || isAdmin)) {
             const bug = await bugService.save(bugToSave, user)
             res.send(bug)
         } else throw 'Saving failed'
@@ -45,6 +45,7 @@ export async function saveBug(req, res){
 export async function getBugs(req, res){
     const { filterBy, sortBy, sortDir, pageIdx } = { ...req.query }
     try{
+
         const bugs = await bugService.query(filterBy, sortBy, sortDir, pageIdx)
         res.send(bugs)
     } catch(e) {
@@ -79,10 +80,10 @@ export async function getPDF(req, res){
 export async function removeBug(req, res){
     try{
         const { bugId } = req.params
-        const loginToken = req.cookies.loginToken
-        const user = authService.validateToken(loginToken)
+        const user = req.user
+        const isAdmin = user?.isAdmin
         const { creator } = bugService.getById(bugId)
-        if (user.username === creator.username ) await bugService.remove(bugId) 
+        if ( user.username === creator.username || isAdmin ) await bugService.remove(bugId) 
         else throw 'Removing bug failed'
         res.send(`Removed ID ${bugId} succsesfully`)
     } catch(e) {
