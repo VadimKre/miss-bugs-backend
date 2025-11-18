@@ -66,5 +66,12 @@
         "password": "$2b$10$10LfDbaM1qoxmQEN3CSnxu7HGzKJuwNTnY2wE5HPcg4wXGPxahx6y",
         "fullname": "testy",
         "_id": "dh2HmG"
+    },
+    {
+        "username": "admin",
+        "password": "$2b$10$/044BsdTTjhen8/Pl6RWOOe.qnd0itVU.eK.6iNjOlMER4iDxQndu",
+        "fullname": "adminov",
+        "isAdmin": true,
+        "_id": "YhNuf7"
     }
 ]
