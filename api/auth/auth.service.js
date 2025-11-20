@@ -36,7 +36,7 @@ async function signup({ username, password, fullname }){
     const saltRounds = 10
     try{
         if (!username || !password || !fullname) throw 'Missing signup information'
-        if (userService.getByUsername(username)) throw 'Username already exists' 
+        if (await userService.getByUsername(username)) throw 'Username already exists' 
         const hashedPassword = await bcrypt.hash(password, saltRounds)
         return userService.create({ username, password: hashedPassword, fullname })
     } catch(e){
@@ -50,7 +50,7 @@ async function login({ username, password }){
     try{
         if (!username || !password) throw 'Missing login information'
 
-        const user = userService.getByUsername(username)
+        const user = await userService.getByUsername(username)
         if (!user) throw 'No such user'
 
         const match = await bcrypt.compare(password, user.password)

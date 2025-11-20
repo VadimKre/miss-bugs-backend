@@ -1,10 +1,7 @@
-import { readJsonFile, writeJsonFile, makeId } from "../../services/util.service.js"
+import { dbService } from "../../services/db.service.js"
+import { ObjectId } from "mongodb"
 
-const path = './data/user.json'
-
-const users = readJsonFile(path)
-
-const resultsPerPage = users.length
+const collectionName = 'user'
 
 export const userService = {
     query,
@@ -15,30 +12,33 @@ export const userService = {
     update,
 }
 
-function query(filterBy = {}, sortBy='', sortDir='', pageIdx=1) {
-
-    let users = readJsonFile(path)
-
+async function query() {
     try {
-        return users
-    } catch(e) { 
+        const collection = await dbService.getCollection(collectionName)
+        return collection.find().toArray()
+    } catch (e) {
         console.log('error in user service: ', e)
         throw new Error(e)
     }
 }
 
-function getByUsername(username){
+async function getByUsername(username){
     try {
-        return users.find( (user) => user.username === username )
+        const collection = await dbService.getCollection(collectionName)
+        return collection.findOne({ username })
     } catch(e) {
         console.log('error in user service: ', e)
         throw new Error(e)
     }
 }
 
-function getById(userId) {
+async function getById(userId) {
     try {
-        return users.find( (user) => user._id === userId )
+        const collection = await dbService.getCollection(collectionName)
+        const criteria = { _id: _buildId(userId) }
+        const user = await collection.findOne(criteria)
+        if (!user) throw new Error('Id not found')
+        return user
     } catch(e) {
         console.log('error in user service: ', e)
         throw new Error(e)
@@ -46,14 +46,12 @@ function getById(userId) {
 }
 
 async function remove(userId) {
-   try {
-        const indexToRemove = users.findIndex( (user) => user._id === userId )
-        if (indexToRemove === -1) {
-            throw new Error('Id not found in remove')
-        }
-        users.splice(indexToRemove, 1)
-        await writeJsonFile(path, users)
-        return users
+    try {
+        const collection = await dbService.getCollection(collectionName)
+        const criteria = { _id: _buildId(userId) }
+        const { deletedCount } = await collection.deleteOne(criteria)
+        if (!deletedCount) throw new Error('Id not found in remove')
+        return deletedCount
     } catch(e) {
         console.log('error in user service: ', e)
         throw new Error(e)
@@ -62,10 +60,11 @@ async function remove(userId) {
 
 async function create(userToCreate){
     try {
-        const newUser = { ...userToCreate, _id: makeId() }
-        users.push(newUser)
-        await writeJsonFile(path, users)
-        return newUser
+        const collection = await dbService.getCollection(collectionName)
+        const userToInsert = { ...userToCreate }
+        delete userToInsert._id
+        const { insertedId } = await collection.insertOne(userToInsert)
+        return collection.findOne({ _id: insertedId })
     } catch(e) {
         console.log('error in user service: ', e)
         throw new Error(e)
@@ -74,15 +73,24 @@ async function create(userToCreate){
 
 async function update(userToUpdate){
     try {
-        const indexToReplace = users.findIndex( (user) => user._id === userToUpdate._id)
-        if (indexToReplace === -1) {
-            throw new Error('Id not found in update')
-        }
-        users[indexToReplace] = { ...users[indexToReplace], ...userToUpdate }
-        await writeJsonFile(path, users)
-        return users[indexToReplace]
+        const collection = await dbService.getCollection(collectionName)
+        const userId = _buildId(userToUpdate._id)
+        const userToSet = { ...userToUpdate }
+        delete userToSet._id
+        const { matchedCount } = await collection.updateOne({ _id: userId }, { $set: userToSet })
+        if (!matchedCount) throw new Error('Id not found in update')
+        return collection.findOne({ _id: userId })
     } catch(e) {
         console.log('error in user service: ', e)
         throw new Error(e)
     } 
+}
+
+function _buildId(userId) {
+    if (typeof userId === 'object') return userId
+    try {
+        return ObjectId.createFromHexString(userId)
+    } catch {
+        return userId
+    }
 }

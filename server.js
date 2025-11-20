@@ -9,10 +9,11 @@ import { bugService } from './api/bug/bug.service.js'
 import { bugRouter } from './api/bug/bug.routes.js'
 import { userRouter } from './api/user/user.routes.js'
 import { authRouter } from './api/auth/auth.routes.js'
+import { msgRouter } from './api/msg/msg.routes.js'
 
 
-// import { loggerService } from './services/logger.service.js'˚
-
+import { loggerService } from './services/logger.service.js'
+import { dbService } from './services/db.service.js'
 
 const app = express()
 const __filename = fileURLToPath(import.meta.url)
@@ -38,6 +39,7 @@ app.use(express.static(publicPath))
 app.use('/api/bug', bugRouter)
 app.use('/api/user', userRouter)
 app.use('/api/auth', authRouter)
+app.use('/api/msg', msgRouter)
 
 app.get(/^\/(?!api).*/, (req, res) => {
     res.sendFile(path.join(publicPath, 'index.html'))
