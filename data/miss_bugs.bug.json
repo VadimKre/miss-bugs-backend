@@ -1,0 +1,360 @@
+[{
+  "_id": {
+    "$oid": "691f40bb19ac1423fd48b6f0"
+  },
+  "title": "Cannot open modal",
+  "severity": 3,
+  "description": "the modal is not opening",
+  "labels": [
+    "dev-branch",
+    "need-CR",
+    "test12"
+  ],
+  "creator": {
+    "_id": "u101",
+    "fullname": "Muki Ja"
+  },
+  "legacyId": "5dKJC7"
+},
+{
+  "_id": {
+    "$oid": "691f40bb19ac1423fd48b6fb"
+  },
+  "title": "Cannot open modal",
+  "severity": 3,
+  "description": "the modal is not opening",
+  "labels": [
+    "dev-branch",
+    "need-CR",
+    "test12"
+  ],
+  "creator": {
+    "_id": "u101",
+    "fullname": "Muki Ja"
+  },
+  "legacyId": "5dKJC7"
+},
+{
+  "_id": {
+    "$oid": "691f40bb19ac1423fd48b6f3"
+  },
+  "title": "cant click button",
+  "severity": 4,
+  "description": "Primary button appears disabled or unresponsive.",
+  "labels": [
+    "dev-branch",
+    "need-CR"
+  ],
+  "creator": {
+    "_id": "u106",
+    "fullname": "Nia Zee"
+  },
+  "legacyId": "gqYQnf"
+},
+{
+  "_id": {
+    "$oid": "691f40bb19ac1423fd48b6fd"
+  },
+  "title": "Testing fails",
+  "severity": 2,
+  "description": "testing a bug fails",
+  "labels": [
+    "need-CR"
+  ],
+  "creator": {
+    "_id": "u103",
+    "fullname": "Tom Roe"
+  },
+  "legacyId": "ZtlLtN"
+},
+{
+  "_id": {
+    "$oid": "691f40bb19ac1423fd48b6f1"
+  },
+  "title": "Search results empty",
+  "severity": 2,
+  "description": "Typing any keyword returns an empty list even though data exists.",
+  "labels": [
+    "dev-branch",
+    "need-CR"
+  ],
+  "creator": {
+    "_id": "4tnm9Q",
+    "username": "vovchik",
+    "fullname": "vov chik"
+  },
+  "legacyId": "CaX7Ak"
+},
+{
+  "_id": {
+    "$oid": "691f40bb19ac1423fd48b6fc"
+  },
+  "title": "Search results empty",
+  "severity": 2,
+  "description": "Typing any keyword returns an empty list even though data exists.",
+  "labels": [
+    "dev-branch",
+    "need-CR"
+  ],
+  "creator": {
+    "_id": "4tnm9Q",
+    "username": "vovchik",
+    "fullname": "vov chik"
+  },
+  "legacyId": "CaX7Ak"
+},
+{
+  "_id": {
+    "$oid": "691f40bb19ac1423fd48b6f4"
+  },
+  "title": "Severity filter not applied",
+  "severity": 4,
+  "description": "Selected severity filter shows unfiltered results.",
+  "labels": [
+    "need-CR",
+    "dev-branch"
+  ],
+  "creator": {
+    "_id": "u102",
+    "fullname": "Dana Li"
+  },
+  "legacyId": "h5x1t2"
+},
+{
+  "_id": {
+    "$oid": "691f40bb19ac1423fd48b6ff"
+  },
+  "title": "Severity filter not applied",
+  "severity": 4,
+  "description": "Selected severity filter shows unfiltered results.",
+  "labels": [
+    "need-CR",
+    "dev-branch"
+  ],
+  "creator": {
+    "_id": "u102",
+    "fullname": "Dana Li"
+  },
+  "legacyId": "h5x1t2"
+},
+{
+  "_id": {
+    "$oid": "691f40bb19ac1423fd48b6f5"
+  },
+  "title": "Logout broken",
+  "severity": 5,
+  "description": "app crashes on logout",
+  "labels": [
+    "dev-branch",
+    "need-CR"
+  ],
+  "creator": {
+    "_id": "u102",
+    "fullname": "Dana Li"
+  },
+  "legacyId": "heZg4N"
+},
+{
+  "_id": {
+    "$oid": "691f40bb19ac1423fd48b700"
+  },
+  "title": "Logout broken",
+  "severity": 5,
+  "description": "app crashes on logout",
+  "labels": [
+    "dev-branch",
+    "need-CR"
+  ],
+  "creator": {
+    "_id": "u102",
+    "fullname": "Dana Li"
+  },
+  "legacyId": "heZg4N"
+},
+{
+  "_id": {
+    "$oid": "691f40bb19ac1423fd48b6f6"
+  },
+  "title": "App crashes on login",
+  "severity": 2,
+  "description": "App exits after entering valid credentials.",
+  "labels": [
+    "critical"
+  ],
+  "creator": {
+    "_id": "u101",
+    "fullname": "Muki Ja"
+  },
+  "legacyId": "k2p8v1"
+},
+{
+  "_id": {
+    "$oid": "691f40bb19ac1423fd48b701"
+  },
+  "title": "App crashes on login",
+  "severity": 2,
+  "description": "App exits after entering valid credentials.",
+  "labels": [
+    "critical"
+  ],
+  "creator": {
+    "_id": "u101",
+    "fullname": "Muki Ja"
+  },
+  "legacyId": "k2p8v1"
+},
+{
+  "_id": {
+    "$oid": "691f40bb19ac1423fd48b6f8"
+  },
+  "title": "Cannot delete bug",
+  "severity": 3,
+  "description": "Delete button does nothing; item remains.",
+  "labels": [
+    "dev-branch"
+  ],
+  "creator": {
+    "_id": "u103",
+    "fullname": "Tom Roe"
+  },
+  "legacyId": "r9d3w8"
+},
+{
+  "_id": {
+    "$oid": "691f40bb19ac1423fd48b702"
+  },
+  "title": "Edit modal not closing",
+  "severity": 1,
+  "description": "Modal stays open after saving changes.",
+  "labels": [
+    "need-CR",
+    "test1"
+  ],
+  "creator": {
+    "_id": "u104",
+    "fullname": "Sara Kim"
+  },
+  "legacyId": "m0s7f4"
+},
+{
+  "_id": {
+    "$oid": "691f40bb19ac1423fd48b6f9"
+  },
+  "title": "testing bug",
+  "severity": 1,
+  "description": "testing testing bugs",
+  "labels": [
+    "critical",
+    "need-CR"
+  ],
+  "creator": {
+    "_id": "u104",
+    "fullname": "Sara Kim"
+  },
+  "legacyId": "rnccOs"
+},
+{
+  "_id": {
+    "$oid": "691f40bb19ac1423fd48b6fe"
+  },
+  "title": "cant click button",
+  "severity": 5,
+  "description": "Primary button appears disabled or unresponsive.",
+  "labels": [
+    "dev-branch",
+    "need-CR"
+  ],
+  "creator": {
+    "_id": "u106",
+    "fullname": "Nia Zee"
+  },
+  "legacyId": "gqYQnf"
+},
+{
+  "_id": {
+    "$oid": "691f40bb19ac1423fd48b6fa"
+  },
+  "title": "Updated Title",
+  "severity": 5,
+  "description": "Updated via API to verify saving.",
+  "labels": [
+    "dev-branch",
+    "need-CR",
+    "critical",
+    "test12"
+  ],
+  "creator": {
+    "_id": "u105",
+    "fullname": "Alex Fox"
+  },
+  "legacyId": "u5pmmA"
+},
+{
+  "_id": {
+    "$oid": "691f40bb19ac1423fd48b704"
+  },
+  "title": "testing bug",
+  "severity": 1,
+  "description": "testing testing bugs",
+  "labels": [
+    "critical",
+    "need-CR"
+  ],
+  "creator": {
+    "_id": "u104",
+    "fullname": "Sara Kim"
+  },
+  "legacyId": "rnccOs"
+},
+{
+  "_id": {
+    "$oid": "691f40bb19ac1423fd48b705"
+  },
+  "title": "Updated Title",
+  "severity": 5,
+  "description": "Updated via API to verify saving.",
+  "labels": [
+    "dev-branch",
+    "need-CR",
+    "critical",
+    "test12"
+  ],
+  "creator": {
+    "_id": "u105",
+    "fullname": "Alex Fox"
+  },
+  "legacyId": "u5pmmA"
+},
+{
+  "_id": {
+    "$oid": "691f40bb19ac1423fd48b6f7"
+  },
+  "title": "Edit modal not closing",
+  "severity": 1,
+  "description": "Modal stays open after saving changes.",
+  "labels": [
+    "need-CR",
+    "test1"
+  ],
+  "creator": {
+    "_id": "u104",
+    "fullname": "Sara Kim"
+  },
+  "legacyId": "m0s7f4"
+},
+{
+  "_id": {
+    "$oid": "691f40bb19ac1423fd48b703"
+  },
+  "title": "Cannot delete bug",
+  "severity": 3,
+  "description": "Delete button does nothing; item remains.",
+  "labels": [
+    "dev-branch"
+  ],
+  "creator": {
+    "_id": "u103",
+    "fullname": "Tom Roe"
+  },
+  "legacyId": "r9d3w8"
+}]
