@@ -335,3 +335,14 @@
 24.11.2025, 15:34:56 - INFO - hitting/api/bug/?pageIdx=1&sortDir=desc
 24.11.2025, 15:34:56 - INFO - hitting/api/bug/?pageIdx=1&sortDir=desc
 24.11.2025, 15:34:57 - INFO - hitting/api/bug/?pageIdx=1&sortDir=desc
+24.11.2025, 16:34:00 - INFO - hitting/api/bug/691f40bb19ac1423fd48b6fb
+24.11.2025, 16:34:00 - INFO - hitting/api/msg/?filterBy%5BaboutBugId%5D=691f40bb19ac1423fd48b6fb
+24.11.2025, 16:34:33 - INFO - hitting/api/msg/
+24.11.2025, 16:34:35 - INFO - hitting/api/msg/?filterBy%5BaboutBugId%5D=691f40bb19ac1423fd48b6fb
+24.11.2025, 16:34:35 - INFO - hitting/api/msg/?filterBy%5BaboutBugId%5D=691f40bb19ac1423fd48b6fb
+24.11.2025, 16:34:36 - INFO - hitting/api/msg/?filterBy%5BaboutBugId%5D=691f40bb19ac1423fd48b6fb
+24.11.2025, 16:34:36 - INFO - hitting/api/msg/?filterBy%5BaboutBugId%5D=691f40bb19ac1423fd48b6fb
+24.11.2025, 16:34:36 - INFO - hitting/api/msg/?filterBy%5BaboutBugId%5D=691f40bb19ac1423fd48b6fb
+24.11.2025, 16:38:55 - INFO - hitting/api/msg/?filterBy%5BaboutBugId%5D=691f40bb19ac1423fd48b6fb
+24.11.2025, 16:40:17 - INFO - hitting/api/bug/691f40bb19ac1423fd48b6fb
+24.11.2025, 16:40:17 - INFO - hitting/api/msg/?filterBy%5BaboutBugId%5D=691f40bb19ac1423fd48b6fb
